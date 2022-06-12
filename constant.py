@@ -15,7 +15,7 @@ GREEN = (  0, 255,   0)
 BLUE  = (  0,   0, 255)
 
 # Load images
-aard = pygame.image.load("aard.png","aard")
-axii = pygame.image.load("axii.png")
-igni = pygame.image.load("igni.png")
+aard = pygame.image.load("loop4.png","aard")
+axii = pygame.image.load("loop5.png")
+igni = pygame.image.load("loop6.png")
 tile = pygame.image.load("tile.png")

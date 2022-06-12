@@ -1,5 +1,6 @@
 import pygame, random
 import constant
+import Functions
 
 playtime = 0
 mousex = 0
@@ -26,7 +27,7 @@ def display_text(writetext,textx,texty,size):
     text = font.render(writetext,True,constant.WHITE,constant.BLACK)
     textRect = text.get_rect()
     textRect.center = (textx, texty)
-    SCREEN.blit(text, textRect)
+    Functions.SCREEN.blit(text, textRect)
     pygame.display.flip()
 
 def timer(gametime,playtime):
@@ -36,7 +37,7 @@ def timer(gametime,playtime):
     time = font.render(' Time: 0:' + str(timeleft)+"  ",True,constant.WHITE, constant.BLACK)
     timeRect = time.get_rect()
     timeRect.center = (1000,100)
-    SCREEN.blit(time, timeRect)
+    Functions.SCREEN.blit(time, timeRect)
     pygame.display.flip()
     return(timeleft)
 
@@ -48,15 +49,15 @@ def drawallcovers():
 
     for i in range(0,4):    # Creating 1st row of tiles
         i+=j
-        SCREEN.blit(tilelist[j], (tX,tY))
+        Functions.SCREEN.blit(tilelist[j], (tX,tY))
         tX+=200
     for i in range(5,9):  # Creating 2nd row of tiles
         i+=j
-        SCREEN.blit(tilelist[j], (tX-800,tY+200))
+        Functions.SCREEN.blit(tilelist[j], (tX-800,tY+200))
         tX+=200
     for i in range(9,13): # Creating 3rd row of tiles
         i+=j
-        SCREEN.blit(tilelist[j], (tX-1600,tY+400))
+        Functions.SCREEN.blit(tilelist[j], (tX-1600,tY+400))
         tX+=200
 
 def drawallpairs():
@@ -66,71 +67,71 @@ def drawallpairs():
     k=0  # imagelist index
 
     for i in range(0,4): # Creating 1st row of images
-        SCREEN.blit(imagelist[k], (iX,iY))
+        Functions.SCREEN.blit(imagelist[k], (iX,iY))
         k+=1
         iX+=200
     for i in range(5,9):  # Creating 2nd row of images
-        SCREEN.blit(imagelist[k], (iX-800,iY+200))
+        Functions.SCREEN.blit(imagelist[k], (iX-800,iY+200))
         k+=1
         iX+=200
     for i in range(9,13): # Creating 3rd row of images
-        SCREEN.blit(imagelist[k], (iX-1600,iY+400))
+        Functions.SCREEN.blit(imagelist[k], (iX-1600,iY+400))
         k+=1
         iX+=200
 
 def displaycover(index):
     "Drawing one cover at a time"
     if(index==0):
-        SCREEN.blit(tilelist[0], (0,0))
+        Functions.SCREEN.blit(tilelist[0], (0,0))
     elif(index==1):
-        SCREEN.blit(tilelist[1], (200,0))
+        Functions.SCREEN.blit(tilelist[1], (200,0))
     elif(index==2):
-        SCREEN.blit(tilelist[2], (400,0))
+        Functions.SCREEN.blit(tilelist[2], (400,0))
     elif(index==3):
-        SCREEN.blit(tilelist[3], (600,0))
+        Functions.SCREEN.blit(tilelist[3], (600,0))
     elif(index==4):
-        SCREEN.blit(tilelist[4], (0,200))
+        Functions.SCREEN.blit(tilelist[4], (0,200))
     elif(index==5):
-        SCREEN.blit(tilelist[5], (200,200))
+        Functions.SCREEN.blit(tilelist[5], (200,200))
     elif(index==6):
-        SCREEN.blit(tilelist[6], (400,200))
+        Functions.SCREEN.blit(tilelist[6], (400,200))
     elif(index==7):
-        SCREEN.blit(tilelist[7], (600,200))
+        Functions.SCREEN.blit(tilelist[7], (600,200))
     elif(index==8):
-        SCREEN.blit(tilelist[8], (0,400))
+        Functions.SCREEN.blit(tilelist[8], (0,400))
     elif(index==9):
-        SCREEN.blit(tilelist[9], (200,400))
+        Functions.SCREEN.blit(tilelist[9], (200,400))
     elif(index==10):
-        SCREEN.blit(tilelist[10], (400,400))
+        Functions.SCREEN.blit(tilelist[10], (400,400))
     elif(index==11):
-        SCREEN.blit(tilelist[11], (600,400))
+        Functions.SCREEN.blit(tilelist[11], (600,400))
     
 def displayimage(index):
     "Drawing one image at a time"
     if(index==0):
-        SCREEN.blit(imagelist[0], (0,0))
+        Functions.SCREEN.blit(imagelist[0], (0,0))
     elif(index==1):
-        SCREEN.blit(imagelist[1], (200,0))
+        Functions.SCREEN.blit(imagelist[1], (200,0))
     elif(index==2):
-        SCREEN.blit(imagelist[2], (400,0))
+        Functions.SCREEN.blit(imagelist[2], (400,0))
     elif(index==3):
-        SCREEN.blit(imagelist[3], (600,0))
+        Functions.SCREEN.blit(imagelist[3], (600,0))
     elif(index==4):
-        SCREEN.blit(imagelist[4], (0,200))
+        Functions.SCREEN.blit(imagelist[4], (0,200))
     elif(index==5):
-        SCREEN.blit(imagelist[5], (200,200))
+        Functions.SCREEN.blit(imagelist[5], (200,200))
     elif(index==6):
-        SCREEN.blit(imagelist[6], (400,200))
+        Functions.SCREEN.blit(imagelist[6], (400,200))
     elif(index==7):
-        SCREEN.blit(imagelist[7], (600,200))
+        Functions.SCREEN.blit(imagelist[7], (600,200))
     elif(index==8):
-        SCREEN.blit(imagelist[8], (0,400))
+        Functions.SCREEN.blit(imagelist[8], (0,400))
     elif(index==9):
-        SCREEN.blit(imagelist[9], (200,400))
+        Functions.SCREEN.blit(imagelist[9], (200,400))
     elif(index==10):
-        SCREEN.blit(imagelist[10], (400,400))
+        Functions.SCREEN.blit(imagelist[10], (400,400))
     elif(index==11):
-        SCREEN.blit(imagelist[11], (600,400))
+        Functions.SCREEN.blit(imagelist[11], (600,400))
 
 def box_pos(mousex,mousey):
     "Getting position of clicked box and giving it a number"
@@ -230,7 +231,7 @@ def won(score,playtime,gametime):
     timeleft=(gametime-pygame.time.get_ticks())//1000
     playtime=(60-timeleft)
     score+=timeleft
-    SCREEN.fill(constant.BLUE)
+    Functions.SCREEN.fill(constant.BLUE)
     display_text("You Won",600,300,80)
     display_text("Score: "+str(score),600,400,50)
     display_text("Time: 0:"+str(playtime),600,500,50)
@@ -252,21 +253,21 @@ def won(score,playtime,gametime):
                     timeleft=(gametime-pygame.time.get_ticks())//1000
                     timeleftwin = timeleft
                     playtime=(60-timeleftwin)*1000
-                    SCREEN.fill(constant.BLACK)
+                    Functions.SCREEN.fill(constant.BLACK)
                     leveltwo(playtime)
                 if (mousex>475 and mousex<685) and (mousey>650 and mousey<750):
                     timeleft=(gametime-pygame.time.get_ticks())//1000
                     timeleftwin = timeleft
                     playtime=(60-timeleftwin)*1000
                     print(playtime)
-                    SCREEN.fill(constant.BLACK)
+                    Functions.SCREEN.fill(constant.BLACK)
                     levelone(playtime)
                 elif (mousex>760 and mousex<840) and (mousey>675 and mousey<725):
                     pygame.quit()
                     quit()
 
 def lost(gametime,playtime):
-    SCREEN.fill(constant.RED)
+    Functions.SCREEN.fill(constant.RED)
     display_text("You Lost",600,250,80)
     display_text("Play Again",350,500,50)
     display_text("Exit",850,500,50)
@@ -284,7 +285,7 @@ def lost(gametime,playtime):
                     timeleft=(gametime-pygame.time.get_ticks())//1000
                     timeleftwin = timeleft
                     playtime=(60-timeleftwin)*1000
-                    SCREEN.fill(constant.BLACK)
+                    Functions.SCREEN.fill(constant.BLACK)
                     levelone(playtime)
                 elif (mousex>780 and mousex<915) and (mousey>455 and mousey<550):
                     pygame.quit()
@@ -330,7 +331,7 @@ def levelone(playtime):
             pygame.time.wait(500)
             won(score,playtime,gametime)
             running = False
-        clock.tick(constant.FPS)
+        Functions.clock.tick(constant.FPS)
         pygame.display.flip()
     pygame.quit()
 
@@ -377,37 +378,9 @@ def leveltwo(playtime):
             pygame.time.wait(500)
             won(score,playtime,gametime)
             running = False
-        clock.tick(constant.FPS)
+        Functions.clock.tick(constant.FPS)
         pygame.display.flip()
     pygame.quit()
 
-def start_game():
-    global SCREEN, clock
-    pygame.init() #run pygame
-    SCREEN = pygame.display.set_mode((constant.WIDTH, constant.HEIGHT)) #Window
-    pygame.display.set_caption('Memory Game') #Title
-    clock = pygame.time.Clock() # Track time
-    bg = pygame.Surface((constant.WIDTH,constant.HEIGHT))
-    SCREEN.fill(constant.WHITE)
-    display_text('Memory Game',600,250,100)
-    display_text('Play',350,500,80)
-    display_text('Exit',850,500,80)    
-    pygame.display.flip()
-    running = True
-    while(running):
-        for event in pygame.event.get(): # QUIT
-            if event.type == pygame.QUIT:
-                running = False
-                pygame.quit()
-                quit()
-            elif event.type == pygame.MOUSEBUTTONDOWN:
-                global mousex, mousey
-                mousex, mousey = pygame.mouse.get_pos()
-                if (mousex>280 and mousex<420) and (mousey>450 and mousey<550):
-                    SCREEN.fill(constant.BLACK)
-                    levelone(playtime) 
-                elif (mousex>780 and mousex<915) and (mousey>455 and mousey<550):
-                    pygame.quit()
-                    quit()
-    pygame.quit()    
-start_game()
+
+Functions.start_game()
